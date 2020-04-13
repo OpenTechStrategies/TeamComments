@@ -1,5 +1,17 @@
 # Extension:TeamComments
+
 The TeamComments extension adds the <teamcomments /> parser hook tag to allow commenting on articles where the tag is present.
+
+This extension was forked from
+[the mediawiki Comments extension](https://www.mediawiki.org/wiki/Extension:Comments)
+and then updated to be more visually streamlined, but with more
+ authorization controls.  Those include, but aren't limited to:
+
+* UI Updates
+* Global on/off switch
+* Viewing authorization
+* Removal of scoring, profile picture, voting, ignoring
+* Adding more nesting
 
 ## Installation
 
@@ -37,6 +49,19 @@ Only logged in users can post comments.
 * `$wgCommentsInRecentChanges` - by default, this variable is set to false. Set it to true to display comments log entries in Special:RecentChanges, too, in addition to the comments log at Special:Log/comments.
 * `$wgTeamCommentsCheatSheetLocation` - by default, this variable is set to false.  Set it to a location to have a a link in the comments section to a user specified cheat sheet
 
-Internationalization
+## Special Page
+
+The extension adds a special page "Special:TeamCommentsList" that displays
+all the comments in the entire system, grouped by the page they are commenting
+on.  This is ordered by page, with the top being the most recently commented
+on page.
+
+## Logging
+
+TeamComments adds a new logging type, "teamcomments" where it logs actions
+taken in the TeamComments extension.  That can be viewed through the normal
+logging utility at "Special:Log"
+
+## Internationalization
 
 The TeamComments extension inherited (partial or full) support for 68 different languages from the Comments Extesion, including English.
