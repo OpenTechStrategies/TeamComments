@@ -15,7 +15,7 @@ and then updated to be more visually streamlined, but with more
 
 ## Installation
 
-* Download and place the file(s) in a directory called Comments in your extensions/ folder.
+* Download and place the file(s) in a directory called TeamComments in your extensions/ folder.
 * Add the following code at the bottom of your LocalSettings.php:
 
 ```
