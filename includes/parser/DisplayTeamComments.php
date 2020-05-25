@@ -12,9 +12,9 @@ class DisplayTeamComments {
    * @return string HTML
    */
   public static function getParserHandler( $input, $args, $parser ) {
-    global $wgTeamCommentsEnabled;
+    global $wgTeamCommentsEnabled, $wgUser;
 
-    if(! $wgTeamCommentsEnabled) {
+    if(! $wgTeamCommentsEnabled || !$wgUser->isAllowed('teamcomment')) {
       return "";
     }
 
