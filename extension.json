@@ -35,9 +35,6 @@
   "LogTypes": [
     "teamcomments"
   ],
-  "FilterLogTypes": {
-    "teamcomments": true
-  },
   "LogActionsHandlers": {
     "teamcomments/add": "TeamCommentsLogFormatter",
     "teamcomments/delete": "LogFormatter"
