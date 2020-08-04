@@ -36,6 +36,7 @@ This extension adds three new user rights:
 * `teamcomment` (which allows posting comments)
 * `teamcommentlinks` (which allows posting external links in comments)
 * `teamcommentadmin` (which allows deleting user-posted comments), e.g.
+* `teamcommentseeusernames` (which allows seeing usernames on comments, defaults to true)
 
 ```
 $wgGroupPermissions['sysop']['commentadmin'] = true;
@@ -48,6 +49,7 @@ Only logged in users can post comments.
 * `$wgTeamCommentsEnabled` - Whether the system is enabled on a global scale.  Provided so comments can be turned off while keeping the tags in pages
 * `$wgCommentsInRecentChanges` - by default, this variable is set to false. Set it to true to display comments log entries in Special:RecentChanges, too, in addition to the comments log at Special:Log/comments.
 * `$wgTeamCommentsCheatSheetLocation` - by default, this variable is set to false.  Set it to a location to have a a link in the comments section to a user specified cheat sheet
+* `$wgTeamCommentsUserPseudonymizer` - by default, this is false.  Set it to a callback that takes a username and returns a string, for overriding the anonymous user text that's outputed if `teamcommentseeusernames` is false
 
 ## Special Page
 
