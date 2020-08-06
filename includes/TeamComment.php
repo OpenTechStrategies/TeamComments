@@ -340,7 +340,7 @@ class TeamComment extends ContextSource {
    * @return string
    */
   function showTeamComment( $hide = false, $containerClass) {
-    global $wgExtensionAssetsPath, $wgLang, $wgUser;
+    global $wgExtensionAssetsPath, $wgLang, $wgUser, $wgTeamCommentsUserPseudonymizer;
 
     $style = '';
     if ( $hide ) {
@@ -348,9 +348,20 @@ class TeamComment extends ContextSource {
     }
 
     $title = Title::makeTitle( NS_USER, $this->username );
+    $user = User::newFromName($this->username);
 
-    $teamcommentPoster = '<a class="username" href="' . htmlspecialchars( $title->getFullURL() ) .
-      '" rel="nofollow">' . $this->username . '</a>';
+    if($wgUser->isAllowed('teamcommentseeusernames') || $wgUser->getId() == $user->getId()) {
+      $teamcommentPoster = '<a class="username" href="' . htmlspecialchars( $title->getFullURL() ) .
+        '" rel="nofollow">' . $this->username . '</a>';
+    } else {
+      if(!$user || $user->getId() == 0) {
+        $teamcommentPoster = $this->msg('teamcomments-anonymoususer');
+      } else if($wgTeamCommentsUserPseudonymizer) {
+        $teamcommentPoster = call_user_func($wgTeamCommentsUserPseudonymizer, $this->username);
+      } else {
+        $teamcommentPoster = wfMessage('teamcomments-numberedanonymoususer', $user->getId());
+      }
+    }
 
     $TeamCommentReplyTo = $this->username;
 

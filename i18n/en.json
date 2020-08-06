@@ -74,5 +74,7 @@
   "right-teamcommentadmin": "Administrate user-submitted comments",
   "action-teamcommentlinks": "use external links in comments",
   "right-teamcommentlinks": "Use external links in comments",
-  "teamcomments-special-teamcommentlist": "Team Comments List"
+  "teamcomments-special-teamcommentlist": "Team Comments List",
+  "teamcomments-anonymoususer": "Anonymous User",
+  "teamcomments-numberedanonymoususer": "Anonymous User #$1"
 }

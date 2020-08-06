@@ -18,7 +18,8 @@
   },
   "GroupPermissions": {
     "*": {
-      "teamcomment": true
+      "teamcomment": true,
+      "teamcommentseeusernames": true
     },
     "teamcommentadmin": {
       "teamcommentadmin": true
@@ -30,7 +31,8 @@
   "AvailableRights": [
     "teamcomment",
     "teamcommentadmin",
-    "teamcommentlinks"
+    "teamcommentlinks",
+    "teamcommentseeusernames"
   ],
   "LogTypes": [
     "teamcomments"
@@ -105,7 +107,8 @@
   "config": {
     "TeamCommentsEnabled": true,
     "TeamCommentsInRecentChanges": false,
-    "TeamCommentsCheatSheetLocation": false
+    "TeamCommentsCheatSheetLocation": false,
+    "TeamCommentsUserPseudonymizer": false
   },
   "manifest_version": 1
 }
