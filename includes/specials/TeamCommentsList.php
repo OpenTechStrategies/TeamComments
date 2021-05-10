@@ -21,16 +21,16 @@ class TeamCommentsList extends SpecialPage {
     );
 
     $context = new RequestContext;
-    $context->setTitle( $this->getTitle() );
+    $context->setTitle( $this->getPageTitle() );
     $context->setRequest( new FauxRequest() );
     $context->setUser( $this->getUser() );
 
-    $out->addWikiText("__TOC__");
+    $out->addWikiTextAsContent("__TOC__");
     $out->addHtml("<div class='special-teamcomments-list'>");
     foreach($res as $row) {
       $id = $row->teamComment_page_id;
       $title = Title::newFromId($id);
-      $out->addWikiText("= [[" . $title->getFullText() . "]] =");
+      $out->addWikiTextAsContent("= [[" . $title->getFullText() . "]] =");
       $teamcommentsPage = new TeamCommentsPage($id, $context);
 
       $output = '<div class="teamcomments-body">';

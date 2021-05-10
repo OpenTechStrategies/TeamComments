@@ -149,7 +149,7 @@ class TeamComment extends ContextSource {
     if ( $this->getTitle()->getArticleID() > 0 ) {
       $teamcommentText = $parser->recursiveTagParse( $teamcomment_text_fix );
     } else {
-      $teamcommentText = $this->getOutput()->parse( $teamcomment_text_fix );
+      $teamcommentText = $this->getOutput()->parseAsContent( $teamcomment_text_fix );
     }
 
     // really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
